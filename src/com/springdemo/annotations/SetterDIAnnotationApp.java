@@ -2,23 +2,19 @@ package com.springdemo.annotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationDemoApp {
+public class SetterDIAnnotationApp {
 
 	public static void main(String[] args) {
-		
-		//read spring config file
+		//read spring config file 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		//get bean from spring container
-		Coach theCoach = context.getBean("myCoach", Coach.class);
+		Coach theCoach = context.getBean("baseballCoach", Coach.class);
 		
-		//call method on bean
 		System.out.println(theCoach.getDailyWorkout());
-		
 		System.out.println(theCoach.getDailyFortune());
 		
-		//close the context
 		context.close();
+
 	}
 
 }

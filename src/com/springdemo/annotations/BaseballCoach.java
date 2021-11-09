@@ -4,18 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PracticeActivityCoach implements Coach {
+public class BaseballCoach implements Coach {
 	
 	private FortuneService fortuneService;
-	
-	@Autowired
-	public PracticeActivityCoach(FortuneService fortuneService) {
-		this.fortuneService = fortuneService;
-	}
+
+	public BaseballCoach() {}
 
 	@Override
 	public String getDailyWorkout() {
-		return "Perform Inversion of Control with Java Annotations";
+		return "Practice batting!";
 	}
 
 	@Override
@@ -23,6 +20,12 @@ public class PracticeActivityCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 	
-	
+	//Setter injection using Java Annotations 
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("BaseballCoach : inside setFortuneService.");
+		this.fortuneService = fortuneService;
+	}
+
 
 }
