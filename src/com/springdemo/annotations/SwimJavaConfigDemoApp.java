@@ -17,6 +17,13 @@ public class SwimJavaConfigDemoApp {
 		
 		System.out.println(theCoach.getDailyFortune());
 		
+		//get bean from spring container
+		SwimCoach alphaCoach = context.getBean("swimCoach", SwimCoach.class);
+		
+		//Call new methods of swimCoach ...which has values injected from properties file		
+		System.out.println("Email : " + alphaCoach.getEmail());
+		System.out.println("Team : " + alphaCoach.getTeam());
+		
 		//close the context
 		context.close();
 	}

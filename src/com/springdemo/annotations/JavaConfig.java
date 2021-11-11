@@ -2,11 +2,12 @@
 package com.springdemo.annotations;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("com.springdemo.annotations")
+//@ComponentScan("com.springdemo.annotations")
+@PropertySource("sport.properties")
 public class JavaConfig {
 	
 	//define bean for SadFortuneService
